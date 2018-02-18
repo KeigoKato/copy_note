@@ -1,17 +1,155 @@
-.header
-  -# .header__top
-  -#   .header__top__title
-  -#   .header__top__info
-  -# .header__bottom
-  -#   .header__bottom__category
-  -#   .header__bottom__tags
--# .articles
--#   -# = render @articles
--#
--# .footer
-
-
-
-
-
+.wrapper
+  .header
+    .header__top
+      .header__top__title
+      .header__top__info
+    .header__bottom
+      %ul
+        %li.category
+          %p.category__literal
+            トップ
+        %li.category
+          %p.category__literal
+            おすすめ
+        %li.category
+          %p.category__literal
+            マンガ
+        %li.category
+          %p.category__literal
+            コラム
+        %li.category
+          %p.category__literal
+            小説
+        %li.category
+          %p.category__literal
+            写真
+        %li.category
+          %p.category__literal
+            音楽
+        %li.separator
+          %p.separator__dummy
+            あ
+        %li.tag
+          %p.tag_literal
+            \#海外
+        %li.tag
+          %p.tag_literal
+            \#恋愛
+        %li.tag
+          %p.tag_literal
+            \#ビジネス
+        %li.tag
+          %p.tag_literal
+            \#インタビュー
+  .articles
+    -# = render @articles
+    .articles__author
+      %ul
+        %li.author-image
+          %img{src: "assets/default_author.png"}
+        %li.author-detail
+          %p.author-detail__name
+            テストユーザー
+          %p.author-detail__date
+            2018/02/18 19:08
+    .articles__text
+      今日は大量の作業をしなくてはいけないので、まずはお昼に映画を観に行って「こんなことしてる場合じゃなかった」と我に返ったふりをして後半頑張る作戦で乗り切ろうと自分にネタバレしながら思っています。おはようございます。
+    .articles__info
+      %ul
+        %li.articles__info__likes
+          %i.fa.fa-heart-o
+            -# 中抜きしないハートは-oを消す。
+        %li.articles__info__likes-count
+          %p
+            10
+        %li.articles__info__share
+          %i.fa.fa-share
+        %li.articles__info__add-magazine
+          %i.fa.fa-plus
+      %p.comment
+        コメントする
+  .articles
+    -# = render @articles
+    .articles__author
+      %ul
+        %li.author-image
+          %img{src: "assets/default_author.png"}
+        %li.author-detail
+          %p.author-detail__name
+            テストユーザー
+          %p.author-detail__date
+            2018/02/18 19:08
+    .articles__text
+      今日は大量の作業をしなくてはいけないので、まずはお昼に映画を観に行って「こんなことしてる場合じゃなかった」と我に返ったふりをして後半頑張る作戦で乗り切ろうと自分にネタバレしながら思っています。おはようございます。
+    .articles__info
+      %ul
+        %li.articles__info__likes
+          %i.fa.fa-heart-o
+            -# 中抜きしないハートは-oを消す。
+        %li.articles__info__likes-count
+          %p
+            10
+        %li.articles__info__share
+          %i.fa.fa-share
+        %li.articles__info__add-magazine
+          %i.fa.fa-plus
+  .articles
+    -# = render @articles
+    .articles__author
+      %ul
+        %li.author-image
+          %img{src: "assets/default_author.png"}
+        %li.author-detail
+          %p.author-detail__name
+            テストユーザー
+          %p.author-detail__date
+            2018/02/18 19:08
+    .articles__text
+      今日は大量の作業をしなくてはいけないので、まずはお昼に映画を観に行って「こんなことしてる場合じゃなかった」と我に返ったふりをして後半頑張る作戦で乗り切ろうと自分にネタバレしながら思っています。おはようございます。
+    .articles__info
+      %ul
+        %li.articles__info__likes
+          %i.fa.fa-heart-o
+            -# 中抜きしないハートは-oを消す。
+        %li.articles__info__likes-count
+          %p
+            10
+        %li.articles__info__share
+          %i.fa.fa-share
+        %li.articles__info__add-magazine
+          %i.fa.fa-plus
+  .footer
+    .footer__top
+    .footer__bottom
+      %ul
+        %li
+          %p
+            noteプレミアム
+        %li
+          %p
+            クリエイターの方へ
+        %li
+          %p
+            よくある質問
+        %li
+          %p
+            使い方
+        %li
+          %p
+            プライバシー
+        %li
+          %p
+            ご利用規約
+        %li
+          %p
+            運営会社
+        %li
+          %p
+            採用情報
+        %li
+          %p
+            運営へのお問い合わせ
+        %li
+          %p
+            noteカイゼン目安箱
 
