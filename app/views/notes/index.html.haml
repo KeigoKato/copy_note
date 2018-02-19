@@ -2,7 +2,19 @@
   .header
     .header__top
       .header__top__title
-      .header__top__info
+        %img{src: "assets/title-logo.png"}
+      %ul.header__top__info
+        %li
+          .search
+            %i.fa.fa-search.fa-fw
+          .announce
+            %i.fa.fa-bell-o.fa-fw
+          .mypage
+            %img{src: "assets/default_author.png"}
+          .contribution
+            %i.fa.fa-pencil-square-o
+              %span
+                ノートを投稿
     .header__bottom
       %ul
         %li.category
@@ -18,7 +30,7 @@
           %p.category__literal
             コラム
         %li.category
-          %p.category__literal
+          .category__literal
             小説
         %li.category
           %p.category__literal
@@ -28,7 +40,6 @@
             音楽
         %li.separator
           %p.separator__dummy
-            あ
         %li.tag
           %p.tag_literal
             \#海外
@@ -41,6 +52,7 @@
         %li.tag
           %p.tag_literal
             \#インタビュー
+    .header__under-space
   .articles
     -# = render @articles
     .articles__author
@@ -68,31 +80,11 @@
           %i.fa.fa-plus
       %p.add-comment
         コメントする
-  .articles
-    -# = render @articles
-    .articles__author
-      %ul
-        %li.author-image
-          %img{src: "assets/default_author.png"}
-        %li.author-detail
-          %p.author-detail__name
-            テストユーザー
-          %p.author-detail__date
-            2018/02/18 19:08
-    .articles__text
-      今日は大量の作業をしなくてはいけないので、まずはお昼に映画を観に行って「こんなことしてる場合じゃなかった」と我に返ったふりをして後半頑張る作戦で乗り切ろうと自分にネタバレしながら思っています。おはようございます。
-    .articles__info
-      %ul
-        %li.articles__info__likes
-          %i.fa.fa-heart-o
-            -# 中抜きしないハートは-oを消す。
-        %li.articles__info__likes-count
-          %p
-            10
-        %li.articles__info__share
-          %i.fa.fa-share
-        %li.articles__info__add-magazine
-          %i.fa.fa-plus
+  .btn-more
+    .btn-more__text
+      %p
+        もっとみる
+
   .footer
     .footer__top
     .footer__bottom
