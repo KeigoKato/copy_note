@@ -10,6 +10,7 @@
       margin: 0 auto;
       background-color: white;
       padding: 13px 0;
+      border-bottom: 1px solid $border_gray;
       &__title {
         float: left;
       }
@@ -40,40 +41,35 @@
     &__bottom {
       width: 940px;
       margin: 0 auto;
-      background: white;
-      border-top: 1px solid $border_gray;
-      ul {
-        color: $light_gray;
-        li.category {
-          display: inline-block;
+      li {
+        display: table-cell;
+        vertical-align: middle;
+        a.category {
+          font-size: 13px;
+          font-weight: bold;
+          display: block;
           padding: 13px;
-          p.category__literal {
-            font-size: 13px;
-            font-weight: bold;
-          }
         }
-        li.separator {
-          display: inline-block;
-          .separator__dummy {
-            height: 20px;
-            width: 10px;
-            margin-right: 15px;
-            border-left: 1px solid $border_gray;
-          }
+        a.tag {
+          font-size: 12px;
+          color: $light_gray;
+          display: block;
+          padding: 8px 10px;
+          margin-right: 15px;
+          vertical-align: middle;
+          background-color: $too_light_gray;
+          border-radius: 4px;
         }
-        li.tag {
-          display: inline-block;
-          // text-align: center;
-          // padding: 13px;
-          p.tag_literal {
-            padding: 8px 10px;
-            margin-right: 15px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            background-color: #F7F9F9;
-          }
+      }
+      li.separator-right {
+        width: 20px;
+        p {
+          height: 34px;
+          border-right: 1px solid $border_gray;
         }
+      }
+      li.separator-left {
+        width: 20px;
       }
     }
     &__under-space {
@@ -158,6 +154,7 @@
       text-align: center;
       p {
         font-size: 12px;
+        color: $light_gray;
         background-color: white;
         height: 30px;
         width: 300px;
@@ -172,15 +169,14 @@
     width: 940px;
     padding: 15px 0 40px 0;
     margin: 0 auto;
-    .footer__bottom {
-      font-size: 11px;
-      color: gray;
-      margin: 20px 0 25px 0;
-      ul {
-        text-align: center;
-        li {
-          display: inline-block;
-          margin-right: 15px;
+    .footer__bottom ul {
+      margin: 20px 0;
+      li {
+        margin-right: 15px;
+        display: inline-block;
+        a {
+          font-size: 11px;
+          color: $light_gray;
         }
       }
     }
