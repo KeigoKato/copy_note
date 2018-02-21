@@ -19,10 +19,10 @@
 
     .header__under-space
 
-  = render "shared/articles"
+  -# = render partial: "article", collections: "@articles"
+  = render @articles
 
-  = render "shared/articles"
-
+  -# = render "article"
   .btn-more
     .btn-more__text
       %p
