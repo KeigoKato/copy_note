@@ -1,7 +1,8 @@
 .header
   .header__top
     .header__top__title
-      %img{src: "assets/title-logo.png"}
+      = link_to root_path do
+        = image_tag "title-logo.png"
     %ul.header__top__info
       %li
         .search
@@ -9,7 +10,7 @@
         .announce
           %i.fa.fa-bell-o.fa-fw
         .mypage
-          %img{src: "assets/default_author.png"}
+          = image_tag "default_author.png"
         = link_to new_note_path do
           .contribution
             %i.fa.fa-pencil-square-o

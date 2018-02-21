@@ -112,6 +112,11 @@
       background-color: white;
       font-size: 14px;
       text-align: justify;
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 13px;
+      }
     }
     &__info {
       @extend .clearfix;
