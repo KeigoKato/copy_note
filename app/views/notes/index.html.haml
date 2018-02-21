@@ -1,33 +1,8 @@
 .wrapper
-  .header
-    .header__top
-      .header__top__title
-        %img{src: "assets/title-logo.png"}
-      %ul.header__top__info
-        %li
-          .search
-            %i.fa.fa-search.fa-fw
-          .announce
-            %i.fa.fa-bell-o.fa-fw
-          .mypage
-            %img{src: "assets/default_author.png"}
-          .contribution
-            %i.fa.fa-pencil-square-o
-              %span
-                ノートを投稿
-    = render "shared/header_category"
-
-    .header__under-space
-
-  -# = render partial: "article", collections: "@articles"
-  = render @articles
-
-  -# = render "article"
+  = render "shared/header"
+  = render @notes
   .btn-more
     .btn-more__text
       %p
         もっとみる
-
-  .footer
-    .footer__top
-    = render "shared/footer_menu"
+  = render "shared/footer"

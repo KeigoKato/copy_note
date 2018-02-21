@@ -1,8 +1,11 @@
 class NotesController < ApplicationController
 
   def index
-    @articles = Note.all
+    @notes = Note.all
     # binding.pry
+  end
+
+  def new
   end
 
 end
