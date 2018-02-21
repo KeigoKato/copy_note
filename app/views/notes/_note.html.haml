@@ -1,0 +1,28 @@
+.articles
+  .articles__author
+    %ul
+      %li.author-image
+        %img{src: "assets/default_author.png"}
+      %li.author-detail
+        %p.author-detail__name
+          - if note.title.present?
+            = note.title
+        %p.author-detail__date
+          - if note.created_at.present?
+            = note.created_at
+  .articles__text
+    - if note.body.present?
+      = note.body
+  .articles__info
+    %ul
+      %li.articles__info__likes
+        %i.fa.fa-heart-o
+      %li.articles__info__likes-count
+        %p
+          10
+      %li.articles__info__share
+        %i.fa.fa-share
+      %li.articles__info__add-magazine
+        %i.fa.fa-plus
+    %p.add-comment
+      コメントする

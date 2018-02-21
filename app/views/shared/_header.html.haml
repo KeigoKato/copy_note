@@ -1,0 +1,56 @@
+.header
+  .header__top
+    .header__top__title
+      %img{src: "assets/title-logo.png"}
+    %ul.header__top__info
+      %li
+        .search
+          %i.fa.fa-search.fa-fw
+        .announce
+          %i.fa.fa-bell-o.fa-fw
+        .mypage
+          %img{src: "assets/default_author.png"}
+        = link_to new_note_path do
+          .contribution
+            %i.fa.fa-pencil-square-o
+              %span
+                ノートを投稿
+  .header__bottom
+    %ul
+      %li
+        %a.category
+          トップ
+      %li
+        %a.category
+          おすすめ
+      %li
+        %a.category
+          マンガ
+      %li
+        %a.category
+          コラム
+      %li
+        %a.category
+          小説
+      %li
+        %a.category
+          写真
+      %li
+        %a.category
+          音楽
+      %li.separator-right
+        %p.separator-right__dummy
+      %li.separator-left
+      %li
+        %a.tag
+          \#海外
+      %li
+        %a.tag
+          \#恋愛
+      %li
+        %a.tag
+          \#ビジネス
+      %li
+        %a.tag
+          \#インタビュー
+  .header__under-space
