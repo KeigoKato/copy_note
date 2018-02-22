@@ -65,6 +65,12 @@
             width: 100%;
           }
         }
+        &__body {
+          .edit-body {
+            height: 200px;
+            width: 450px;
+          }
+        }
       }
   }
 }

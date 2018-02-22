@@ -25,6 +25,6 @@
             = f.file_field :title_image ,class: "choose-title-image__hidden"
         .editor__title
           = f.text_field :title, class: "edit-title", placeholder: "ノートタイトル"
-        .editor__article
-          = f.text_field :body, class: "edit-body"
+        .editor__body
+          = f.text_area :body, class: "edit-body"
           = f.submit "Send"
