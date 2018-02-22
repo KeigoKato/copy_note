@@ -19,7 +19,7 @@
         = note.title
     .body
       - if note.body.present?
-        = note.body
+        = simple_format(note.body)
   .articles__info
     %ul
       %li.articles__info__likes
