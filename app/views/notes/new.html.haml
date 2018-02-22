@@ -16,4 +16,15 @@
               %button
                 %p
                   キャンセル
-
+  .post-new
+    .editor
+      = form_for @post do |f|
+        .editor__title-image
+          = f.label :title_image, class: "choose-title-image" do
+            %i.fa.fa-image.fa-fw
+            = f.file_field :title_image ,class: "choose-title-image__hidden"
+        .editor__title
+          = f.text_field :title, class: "edit-title", placeholder: "ノートタイトル"
+        .editor__article
+          = f.text_field :body, class: "edit-body"
+          = f.submit "Send"

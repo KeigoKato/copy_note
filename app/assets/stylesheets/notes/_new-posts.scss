@@ -33,4 +33,38 @@
       }
     }
   }
+  .post-new {
+    width: 100%;
+    background-color: yellow;
+      .editor {
+        height: 620px;
+        width: 450px;
+        margin: 20px auto 0 auto;
+        background-color: skyblue;
+        &__title-image {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          border: 1px solid $border-gray;
+          background-color: white;
+          i {
+            height: 50px;
+            width: 50px;
+            font-size: 25px;
+            color: gray;
+            text-align: center;
+            line-height: 50px;
+          }
+        }
+        &__title {
+          font-size: 32px;
+          font-weight: 700;
+          color: gray;
+          margin-top: 20px;
+          .edit-title {
+            width: 100%;
+          }
+        }
+      }
+  }
 }
