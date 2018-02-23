@@ -1,0 +1,87 @@
+.wrapper-new {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  .header-new {
+    padding: 0 20px;
+    border-bottom: 1px solid $border-gray;
+    &__inner {
+      @extend .clearfix;
+      &__logo {
+        position: absolute;
+        left: 50%;
+        margin: 13px 0 0 -32px;
+      }
+    }
+    .account-menu {
+      float: right;
+      ul {
+        li {
+          padding: 8px 0;
+          display: table-cell;
+          .account-menu__btn {
+            margin-left: 10px;
+            button {
+              height: 31px;
+              width: 80px;
+              display: block;
+              border: 1px solid $border-gray;
+              border-radius: 4px;
+              outline: none;
+              .send-btn {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .post-new {
+    width: 100%;
+    .editor {
+      height: 100%;
+      width: 600px;
+      margin: 40px auto 0 auto;
+      &__title-image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid $border-gray;
+        background-color: $border-gray;
+        .fa.fa-image.fa-fw {
+          height: 50px;
+          width: 50px;
+          font-size: 25px;
+          color: white;
+          text-align: center;
+          line-height: 50px;
+        }
+        .choose-title-image__hidden {
+          display: none;
+        }
+      }
+      &__title {
+        font-size: 32px;
+        font-weight: 700;
+        color: gray;
+        margin-top: 20px;
+        .edit-title {
+          width: 100%;
+          border: 0px;
+          outline: none;
+        }
+      }
+      &__body {
+        .edit-body {
+          margin-top: 30px;
+          resize: none;
+          outline: none;
+          height: 600px;
+          width: 100%;
+          border: 0px;
+        }
+      }
+    }
+  }
+}

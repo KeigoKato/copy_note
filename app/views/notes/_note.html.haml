@@ -2,17 +2,24 @@
   .articles__author
     %ul
       %li.author-image
-        %img{src: "assets/default_author.png"}
+        = image_tag "default_author.png"
       %li.author-detail
         %p.author-detail__name
-          - if note.title.present?
-            = note.title
+          - if note.user.nickname.present?
+            = note.user.nickname
         %p.author-detail__date
           - if note.created_at.present?
-            = note.created_at
+            = note.created_at.in_time_zone('Tokyo').to_s
   .articles__text
-    - if note.body.present?
-      = note.body
+    .image
+      - if note.title_image.present?
+        = image_tag note.title_image
+    .title
+      - if note.title.present?
+        = note.title
+    .body
+      - if note.body.present?
+        = note.body
   .articles__info
     %ul
       %li.articles__info__likes
