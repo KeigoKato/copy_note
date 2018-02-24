@@ -12,11 +12,13 @@
             = note.created_at.in_time_zone('Tokyo').to_s
   .articles__text
     .image
-      - if note.title_image.present?
-        = image_tag note.title_image
+      = link_to note_path(note) do
+        - if note.title_image.present?
+          = image_tag note.title_image
     .title
-      - if note.title.present?
-        = note.title
+      = link_to note_path(note) do
+        - if note.title.present?
+          = note.title
     .body
       - if note.body.present?
         = note.body
