@@ -6,6 +6,9 @@
     %ul.header__top__info
       -if user_signed_in?
         %li
+          .logout
+            = link_to destroy_user_session_path do
+              ログアウト
           .search
             %i.fa.fa-search.fa-fw
           .announce
