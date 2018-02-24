@@ -4,18 +4,32 @@
       = link_to root_path do
         = image_tag "title-logo.png"
     %ul.header__top__info
-      %li
-        .search
-          %i.fa.fa-search.fa-fw
-        .announce
-          %i.fa.fa-bell-o.fa-fw
-        .mypage
-          = image_tag "default_author.png"
-        = link_to new_note_path do
-          .contribution
-            %i.fa.fa-pencil-square-o
-              %span
-                ノートを投稿
+      -if user_signed_in?
+        %li
+          .search
+            %i.fa.fa-search.fa-fw
+          .announce
+            %i.fa.fa-bell-o.fa-fw
+          .mypage
+            = image_tag "default_author.png"
+          = link_to new_note_path do
+            .contribution
+              %i.fa.fa-pencil-square-o
+                %span
+                  ノートを投稿
+      -else
+        %li.user-account
+          = link_to new_user_session_path do
+            .sign-in
+              ログイン
+          .user-account__separator
+            \/
+          = link_to new_user_registration_path do
+            .sign-up
+              新規登録
+          .search
+            %i.fa.fa-search.fa-fw
+
   .header__bottom
     %ul
       %li

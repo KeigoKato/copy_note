@@ -36,6 +36,23 @@
           background-color: #41B79B;
           color: white;
         }
+        .user-account {
+          display: flex;
+          font-size: 12px;
+          line-height: 30px;
+          font-weight: bold;
+          .sign-in {
+            margin-left: 0;
+            color: $literal_green;
+          }
+          &__separator {
+            margin: 0 5px;
+          }
+          .sign-up {
+            margin-left: 0;
+            color: $literal_green;
+          }
+        }
       }
     }
     &__bottom {

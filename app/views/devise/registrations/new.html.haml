@@ -1,0 +1,27 @@
+.wrapper-sign_up
+  .sign-up__header
+    = link_to root_path do
+      note
+  .register-container
+    .register-container__title
+      %p
+        noteに登録する
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム"
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+      .field
+        = f.password_field :password, autocomplete: "off", placeholder: "パスワード " + "#{@minimum_password_length}文字以上"
+      .field
+        = f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード確認"
+      .check-agree
+        利用規約に同意する
+      .actions
+        %button
+          登録する（無料）
+          = f.submit "Send", class: "registration-btn"
+    .login-btn
+      = render "devise/shared/links"
+  = render "shared/footer"

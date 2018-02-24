@@ -1,0 +1,75 @@
+.wrapper-sign_up {
+  height: 100vh;
+  width: 100%;
+  background-color: $too_light_gray;
+  .sign-up__header {
+    height: 90px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 30px;
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  .register-container {
+    width: 320px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid $border_gray;
+    &__title {
+      margin-bottom: 15px;
+      p {
+        font-size: 22px;
+        font-weight: bold;
+        padding-top: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+    .field {
+      font-size: 12px;
+      margin-bottom: 10px;
+      input {
+        width: calc(100% - 22px);
+        padding: 5px 10px;
+        border: 1px solid $border_gray;
+        border-radius: 4px;
+      }
+    }
+    .check-agree {
+      margin: 15px 0;
+      text-align: center;
+      font-size: 11px;
+    }
+    .actions button {
+      height: 48px;
+      width: 318px;
+      border: none;
+      border-radius: 4px;
+      background-color: #2cb696;
+      font-size: 16px;
+      color: white;
+      .registration-btn {
+        display: none;
+      }
+    }
+    .login-btn {
+      margin-top: 15px;
+      padding: 15px;
+      border-top: 1px solid $border_gray;
+      text-align: center;
+      font-size: 12px;
+      a {
+        color: #2cb696;
+        text-decoration: none;
+      }
+    }
+  }
+  @import "module/footer";
+}

@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   resources :notes, only: [:index, :new, :create]
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end
