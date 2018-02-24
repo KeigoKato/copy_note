@@ -1,8 +1,8 @@
-.wrapper-sign_up {
+.wrapper-sign-up-in {
   height: 100vh;
   width: 100%;
   background-color: $too_light_gray;
-  .sign-up__header {
+  .sign-up-in__header {
     height: 90px;
     width: 90%;
     margin: 0 auto;
@@ -40,6 +40,12 @@
         padding: 5px 10px;
         border: 1px solid $border_gray;
         border-radius: 4px;
+      }
+    }
+    .remember-me {
+      text-align: center;
+      #user_remember_me {
+        width: 10px;
       }
     }
     .check-agree {
