@@ -5,8 +5,8 @@ user.notes_of_author ... あるユーザーが書いた記事
 user.notes_of_subscriber ... あるユーザーが買った記事  
 user.deals_of_author ... あるユーザーが著者として参加した取引  
 user.deals_of_subscriber ... あるユーザーが買手として参加した取引  
-note.author ... ある記事を売ったユーザー  
-note.subscriber ... ある記事を書いたユーザー  
+note.authors ... ある記事を書いたユーザー  
+note.subscribers ... ある記事を買ったユーザー  
 note.deals ... ある記事が売買された取引  
   
 ## users table (devise以外で追加するカラム)  
