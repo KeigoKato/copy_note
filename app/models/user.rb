@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :notes
 
+  # 売買の取引に関するリレーション定義
   has_many :deals_of_author, class_name: "Deal", foreign_key: "author_id"
   has_many :deals_of_subscriber, class_name: "Deal", foreign_key: "subscriber_id"
   has_many :notes_of_author, through: :deals_of_author, source: "note"
