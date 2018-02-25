@@ -16,10 +16,10 @@ note.deals ... ある記事が売買された取引
 |profile|text|
 
 ### Association
-has_many :deals_of_author, class_name: Deal, foreign_key: author_id
-has_many :deals_of_subscriber, class_name: Deal, foreign_key: subscriber_id
-has_many :notes_of_author, through: :deals_of_author, source: note
-has_many :notes_of_subscriber, through: :deals_of_subscriber, source: note
+has_many :deals_of_author, class_name: "Deal", foreign_key: "author_id"
+has_many :deals_of_subscriber, class_name: "Deal, foreign_key: "subscriber_id"
+has_many :notes_of_author, through: :deals_of_author, source: "note"
+has_many :notes_of_subscriber, through: :deals_of_subscriber, source: "note"
 
 ## notes table
 |Column|Type|
@@ -31,8 +31,8 @@ has_many :notes_of_subscriber, through: :deals_of_subscriber, source: note
 |value|string|
 
 ### Association
-belongs_to :author, class_name: User
-belongs_to :subscriber, class_name: User
+belongs_to :author, class_name: "User"
+belongs_to :subscriber, class_name: "User"
 belongs_to :note
 
 ## deals table
