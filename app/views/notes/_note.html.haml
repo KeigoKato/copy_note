@@ -10,10 +10,11 @@
         %p.author-detail__date
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
-      %li.author-purchase
-        = link_to root_path do
-          %p.author-purchase__value
-            ¥250
+      - if note.value!=0
+        %li.author-purchase
+          = link_to root_path do
+            %p.author-purchase__value
+              = "¥ #{note.value}"
   .articles__text
     .image
       = link_to note_path(note) do
