@@ -1,4 +1,13 @@
 .articles
+  .articles__text
+    .image
+      = link_to note_path(note) do
+        - if note.title_image.present?
+          = image_tag note.title_image
+    .title
+      = link_to note_path(note) do
+        - if note.title.present?
+          = note.title
   .articles__author
     %ul
       %li.author-image
@@ -10,19 +19,7 @@
         %p.author-detail__date
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
-      %li.author-purchase
-        = link_to root_path do
-          %p.author-purchase__value
-            ¥250
   .articles__text
-    .image
-      = link_to note_path(note) do
-        - if note.title_image.present?
-          = image_tag note.title_image
-    .title
-      = link_to note_path(note) do
-        - if note.title.present?
-          = note.title
     .body
       - if note.body.present?
         = simple_format(note.body)
