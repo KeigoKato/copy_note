@@ -1,34 +1,48 @@
 # データベース設計
 
+## 各オブジェクトの取得方法
+user.notes_of_author ... あるユーザーが書いた記事
+user.notes_of_buyer ... あるユーザーが買った記事
+user.deals_of_author ... あるユーザーが著者として参加した取引
+user.deals_of_buyer ... あるユーザーが買手として参加した取引
+note.author ... ある記事を売ったユーザー
+note.buyer ... ある記事を書いたユーザー
+note.deals ... ある記事が売買された取引
+
 ## users table (devise以外で追加するカラム)
-|Column|Type|Option|
-|:--|:--|:--|
-|nickname|string|null: false, unique: true|
-|profile|text||
+|Column|Type|
+|:--|:--|
+|nickname|string|
+|profile|text|
 
 ### Association
-has_many: notes
-has_many: purchases
+has_many :deals_of_author, class_name: Deal, foreign_key: author_id
+has_many :deals_of_subscriber, class_name: Deal, foreign_key: subscriber_id
+has_many :notes_of_author, through: :deals_of_author, source: note
+has_many :notes_of_subscriber, through: :deals_of_subscriber, source: note
 
 ## notes table
-|Column|Type|Option|
-|:--|:--|:--|
-|title|string|null: false|
-|user_id|integer|null: false, foreign_key|
-|body|text||
-|title_image|string||
-|value|string|null: false, default: 0|
+|Column|Type|
+|:--|:--|
+|title|string|
+|user_id|integer|
+|body|text|
+|title_image|string|
+|value|string|
 
 ### Association
-belongs_to: user
-has_many: purchases
+belongs_to :author, class_name: User
+belongs_to :subscriber, class_name: User
+belongs_to :note
 
-## purchases table
-|Column|Type|Option|
-|:--|:--|:--|
-|note_id|integer|null: false, foreign_key|
-|user_id|integer|null: false, foreign_key|
+## deals table
+|Column|Type|
+|:--|:--|
+|author_id|integer|
+|buyer_id|integer|
+|note_id|integer|
 
 ### Association
-belongs_to: user
-belongs_to: note
+has_many :deals
+has_many :authors, through: :deals
+has_many :subscriber, through: :deals
