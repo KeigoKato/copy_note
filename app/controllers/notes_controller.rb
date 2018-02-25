@@ -6,6 +6,7 @@ class NotesController < ApplicationController
 
   def new
     @post = Note.new
+    binding.pry
   end
 
   def create

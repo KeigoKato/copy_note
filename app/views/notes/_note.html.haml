@@ -12,7 +12,7 @@
             = note.created_at.in_time_zone('Tokyo').to_s
       %li.author-purchase
         -if note.value!=0
-          = link_to root_path do
+          = link_to note_deals_path(note), method: :post do
             %p.author-purchase__value
               = "¥ #{note.value}"
   .articles__text
