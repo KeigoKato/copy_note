@@ -1,0 +1,24 @@
+.modal-container
+  %button.purchase-settlement Open
+
+.modal-container__overlay
+  .modal-container__modal-window
+    .modal-container__modal-window__header
+      お支払い方法の選択
+    .modal-container__modal-window__about-payment
+      %a お支払い方法について
+    .modal-container__modal-window__body
+      .purchase-image
+        -# = link_tag
+      .purchase-detail
+        %p.purchase-detail__title テストタイトルテストタイトルテストタイトル
+        %p.purchase-detail__price 108円
+    .modal-container__modal-window__support
+      %input{:type => "checkbox"}
+      クリエイターをサポート
+    .modal-container__modal-window__footer
+      %ul
+        %li.modal-container__modal-window__footer__cancel
+          %button.modal-container__close-btn キャンセル
+        %li.modal-container__modal-window__footer__purchase
+          %button.modal-container__purchase-btn 購入
