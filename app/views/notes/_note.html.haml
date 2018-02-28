@@ -10,18 +10,6 @@
         %p.author-detail__date
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
-
-
-      -# %li.author-purchase
-      -#   - if note.value!=0
-      -#     = link_to note_deals_path(note), class: "author-purchase-btn", method: :post do
-      -#       %p.author-purchase__value
-      -#         - if user_signed_in?
-      -#           = current_user.deals_of_subscriber.where(note_id: note.id)==[] ? "¥ #{note.value}" : "購入済み"
-      -#         - else
-      -#           = "¥ #{note.value}"
-
-
       %li.author-purchase
         - if note.value!=0
           %button.author-purchase-btn{value: "#{note.id}"}
@@ -30,10 +18,6 @@
                 = current_user.deals_of_subscriber.where(note_id: note.id)==[] ? "¥ #{note.value}" : "購入済み"
               - else
                 = "¥ #{note.value}"
-
-
-
-
   .articles__text
     .image
       = link_to note_path(note) do

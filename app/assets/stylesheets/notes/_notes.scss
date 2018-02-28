@@ -36,8 +36,11 @@
         li.author-purchase {
           display: inline-block;
           float: right;
-          a {
+          button {
             text-decoration: none;
+            background: none;
+            border: none;
+            outline: none;
             p.author-purchase__value {
               color: #2cb696;
               border: 1px solid #2cb696;
