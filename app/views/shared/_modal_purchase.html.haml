@@ -1,6 +1,3 @@
-.modal-container
-  %button.purchase-settlement Open
-
 .modal-container__overlay
   .modal-container__modal-window
     .modal-container__modal-window__header
@@ -21,4 +18,5 @@
         %li.modal-container__modal-window__footer__cancel
           %button.modal-container__close-btn キャンセル
         %li.modal-container__modal-window__footer__purchase
-          %button.modal-container__purchase-btn 購入
+          = link_to root_path , class: "modal-container__purchase-btn__post", method: :get do
+            %button.modal-container__purchase-btn 購入

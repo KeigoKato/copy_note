@@ -1,16 +1,5 @@
 $(function() {
-  // 購入ボタンをクリック時に、fadeInメソッドでHTML要素を表示する
-  $('.purchase-settlement').on('click', function() {
-    $('.modal-container__overlay, .modal-container__modal-window').fadeIn();
-  });
-  // キャンセルボタンをクリック時に、fadeOutメソッドでHTML要素を非表示にする
-  $('.modal-container__close-btn').on('click', function() {
-    $('.modal-container__overlay, .modal-container__modal-window').fadeOut();
-  });
-  locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
-  $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
 
-// モーダルウィンドウを中央配置するための配置場所を計算する関数
   function locateCenter() {
     let w = $(window).width();
     let h = $(window).height();
@@ -21,4 +10,19 @@ $(function() {
       'top': ((h - ch) / 2) + 'px'
     });
   }
+
+  locateCenter();
+  $(window).resize(locateCenter);
+
+  $('.author-purchase-btn').on('click', function() {
+    var note_id = $(this).attr("value")
+    $(".modal-container__purchase-btn__post").attr("href", "/notes/" + note_id + "/deals");
+    $(".modal-container__purchase-btn__post").attr("data-method", "post");
+    $('.modal-container__overlay, .modal-container__modal-window').fadeIn();
+  });
+
+  $('.modal-container__close-btn').on('click', function() {
+    $('.modal-container__overlay, .modal-container__modal-window').fadeOut();
+  });
+
 });
