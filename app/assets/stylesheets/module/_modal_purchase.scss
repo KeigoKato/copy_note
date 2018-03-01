@@ -65,6 +65,7 @@
       padding: 10px;
       height: 30px;
       background-color: #F7F9F9;
+      color: black;
       .modal-container__close-btn {
         font-size: 12px;
         float: left;
@@ -73,15 +74,15 @@
         background-color: #F7F9F9;
         border: none;
         outline: none;
+        cursor: pointer;
       }
       .modal-container__purchase-btn {
         font-size: 12px;
         height: 28px;
         width: 98px;
-        background-color: #F7F9F9;
-        border: none;
         float: right;
-        outline: none;
+        text-decoration: none;
+        line-height: 28px;
       }
     }
   }

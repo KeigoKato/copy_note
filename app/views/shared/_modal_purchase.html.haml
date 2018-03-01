@@ -8,7 +8,7 @@
       .purchase-image
         -# = link_tag
       .purchase-detail
-        %p.purchase-detail__title テストタイトルテストタイトルテストタイトル
+        %p.purchase-detail__title テストタイトル
         %p.purchase-detail__price 108円
     .modal-container__modal-window__support
       %input{:type => "checkbox"}
@@ -18,5 +18,5 @@
         %li.modal-container__modal-window__footer__cancel
           %button.modal-container__close-btn キャンセル
         %li.modal-container__modal-window__footer__purchase
-          -# = link_to root_path , class: "modal-container__purchase-btn__post", method: :get do
-          -# %button.modal-container__purchase-btn 購入
+          = link_to root_path , class: "modal-container__purchase-btn", method: :get do
+            購入
