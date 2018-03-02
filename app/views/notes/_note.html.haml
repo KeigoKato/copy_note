@@ -29,7 +29,8 @@
           = note.title
     .body
       - if note.body.present?
-        = simple_format(note.body)
+        -# = simple_format(note.body)
+        = note.body.truncate(200)
   .articles__info
     %ul
       %li.articles__info__likes
