@@ -1,0 +1,37 @@
+.wrapper-index
+  = render "shared/header"
+
+  .note-creater
+    .note-creater__content
+      .note-creater__content__avatar
+      .note-creater__content__detail
+        .note-creater__content__detail__name
+          = @user.nickname
+        .note-creater__content__detail__profile
+          = @user.profile
+        .note-creater__content__detail__otherList
+          %ul
+            %li.follow
+              50 フォロー
+            %li.follower
+              7329 フォロワー
+            %li.snsList
+              %i.fa.fa-facebook-square.fa-fw
+              %i.fa.fa-twitter.fa-fw
+    .note-creater__customNav
+      .note-creater__customNav__inner
+        %ul
+          %li
+            ホーム
+          %li
+            マガジン
+        .note-creater__customNav__inner__search
+          %i.fa.fa-search.fa-fw
+
+  = render @notes
+  .btn-more
+    .btn-more__text
+      %p
+        もっとみる
+  = render "shared/footer"
+=render "shared/modal_purchase"

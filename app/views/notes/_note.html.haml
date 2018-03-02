@@ -6,7 +6,8 @@
       %li.author-detail
         %p.author-detail__name
           - if note.user.nickname.present?
-            = note.user.nickname
+            =link_to user_path(note.user) do
+              = note.user.nickname
         %p.author-detail__date
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
