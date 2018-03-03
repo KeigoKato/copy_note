@@ -1,0 +1,97 @@
+.configure-purchase {
+  display: none;
+  height: 219px;
+  width: 470px;
+  &__header {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid $border_gray;
+  }
+  &__body {
+    height: 81px;
+    margin: 15px;
+    &__top {
+      margin-bottom: 15px;
+      height: 26px;
+      width: 100%;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 26px;
+      ul {
+       li {
+        display: inline-block;
+       }
+       li p {
+        padding-left: 24px;
+        margin-right: 20px;
+       }
+       .checkbox {
+        margin-right: 10px;
+        font-weight: normal;
+       }
+       .edit-value {
+        width: 74px;
+        font-weight: normal;
+       }
+      }
+    }
+    &__middle {
+      height: 38px;
+      width: 100%;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      border: 1px solid $border_gray;
+      &__inner {
+        padding: 10px;
+        font-size: 12px;
+        ul {
+          li {
+            display: inline-block;
+          }
+          li i {
+            font-size: 15px;
+            margin-left: 8px;
+          }
+          .detail-configure {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    &__bottom {
+      padding: 10px;
+      background-color: #f8f9fa;
+      height: 30px;
+      margin-top: 15px;
+      .post-cancel-btn {
+        button {
+          float: left;
+          font-weight: normal;
+          height: 30px;
+          width: 98px;
+          cursor: pointer;
+          color: black;
+          background: transparent;
+          border: none;
+        }
+      }
+      .post-btn {
+        button {
+          float: right;
+          font-weight: normal;
+          height: 30px;
+          width: 98px;
+          border-radius: 4px;
+          border: 1px solid #2cb696;
+          cursor: pointer;
+          background-color: #2cb696;
+          color: white;
+        }
+      }
+    }
+  }
+}

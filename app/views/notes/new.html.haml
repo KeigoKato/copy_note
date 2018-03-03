@@ -23,8 +23,49 @@
         .editor__title-image
           = f.label :title_image, class: "choose-title-image" do
             .fa.fa-image.fa-fw
-            = f.file_field :title_image ,class: "choose-title-image__hidden"
+              = f.file_field :title_image ,class: "choose-title-image__hidden"
         .editor__title
           = f.text_field :title, class: "edit-title", placeholder: "ノートタイトル"
         .editor__body
           = f.text_area :body, class: "edit-body", placeholder: "ノート本文"
+
+    .configure-purchase
+      .configure-purchase__header
+        公開設定
+      .configure-purchase__body
+        .configure-purchase__body__top
+          %ul
+            %li
+              %p
+                販売設定
+            %li
+              .checkbox
+                = radio_button_tag :check, "1"
+                無料
+            %li
+              .checkbox
+                = radio_button_tag :check, "2"
+                有料
+            %li
+              .configure-value
+                = f.text_field :value, class: "edit-value", placeholder: "値段を入力"
+            %li
+              円
+        .configure-purchase__body__middle
+          .configure-purchase__body__middle__inner
+            %ul
+              %li
+                %i.fa.fa-caret-right
+              %li
+                %p.detail-configure
+                  詳細設定
+              %li
+                %p
+                  (ハッシュタグ、マガジン)
+      .configure-purchase__body__bottom
+        .post-cancel-btn
+          %button
+            キャンセル
+        .post-btn
+          %button
+            公開
