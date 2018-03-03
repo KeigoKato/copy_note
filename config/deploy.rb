@@ -1,4 +1,4 @@
-lock "~> 3.10.1"
+lock "3.10.1"
 
 set :application, 'copy_note'
 set :repo_url,  'git@github.com:KeigoKato/copy_note.git'
