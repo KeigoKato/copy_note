@@ -87,7 +87,7 @@ GEM
       html2haml
     erubis (2.7.0)
     execjs (2.7.0)
-    ffi (1.9.21)
+    ffi (1.9.23)
     font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
@@ -207,7 +207,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rmagick (2.16.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
     sass (3.5.5)
@@ -292,7 +291,6 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.6)
-  rmagick
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

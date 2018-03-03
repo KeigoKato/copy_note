@@ -1,6 +1,5 @@
 class DealsController < ApplicationController
 
-  # before_action :purchase_note, only: :create
   before_action :authenticate_user!, only: :create
 
   def create
