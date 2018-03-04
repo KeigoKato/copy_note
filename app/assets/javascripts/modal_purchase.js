@@ -1,16 +1,5 @@
 $(function() {
 
-  function locateCenter() {
-    let w = $(window).width();
-    let h = $(window).height();
-    let cw = $(".modal-container__modal-window").outerWidth();
-    let ch = $(".modal-container__modal-window").outerHeight();
-    $(".modal-container__modal-window").css({
-      "left": ((w - cw) / 2) + "px",
-      "top": ((h - ch) / 2) + "px"
-    });
-  }
-
   function replaceHTML (title, price) {
     $(".purchase-detail__title").text(title);
     $(".purchase-detail__price").text(price);
@@ -45,8 +34,5 @@ $(function() {
           $(".modal-container__overlay").fadeOut();
       }
   });
-
-  locateCenter();
-  $(window).resize(locateCenter);
 
 });
