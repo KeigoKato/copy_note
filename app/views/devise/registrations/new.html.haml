@@ -16,6 +16,9 @@
         = f.password_field :password, autocomplete: "off", placeholder: "パスワード " + "#{@minimum_password_length}文字以上"
       .field
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード確認"
+      .field
+        = f.label :thumbnail ,class: "choose-user-thumbnail-hidden" do
+          = f.file_field :thumbnail ,class: "choose-user-thumbnail"
       .check-agree
         利用規約に同意する
       .actions
