@@ -2,7 +2,11 @@
   .articles__author
     %ul
       %li.author-image
-        = image_tag "default_author.png"
+        - if note.user.thumbnail.present?
+          = image_tag note.user.thumbnail
+          -# = image_tag "default_author.png"
+        - else
+          = image_tag "default_author.png"
       %li.author-detail
         %p.author-detail__name
           - if note.user.nickname.present?

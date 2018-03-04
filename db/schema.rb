@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225090146) do
+ActiveRecord::Schema.define(version: 20180304073856) do
 
   create_table "deals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "author_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180225090146) do
     t.datetime "updated_at",                                        null: false
     t.string   "nickname",                             default: ""
     t.text     "profile",                limit: 65535
+    t.string   "thumbnail"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
