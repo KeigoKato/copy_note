@@ -4,7 +4,6 @@
       %li.author-image
         - if note.user.thumbnail.present?
           = image_tag note.user.thumbnail
-          -# = image_tag "default_author.png"
         - else
           = image_tag "default_author.png"
       %li.author-detail

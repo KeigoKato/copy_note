@@ -16,7 +16,8 @@
             %i.fa.fa-bell-o.fa-fw
           = link_to user_path(current_user), class: "current_user_page" do
             .mypage
-              = image_tag "default_author.png"
+              -# = image_tag "default_author.png"
+              = image_tag current_user.thumbnail
           = link_to new_note_path do
             .contribution
               %i.fa.fa-pencil-square-o

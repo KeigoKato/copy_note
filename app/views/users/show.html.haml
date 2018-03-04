@@ -4,6 +4,11 @@
   .note-creater
     .note-creater__content
       .note-creater__content__avatar
+        - if @user.thumbnail.present?
+          = image_tag @user.thumbnail
+          -# = image_tag "default_author.png"
+        - else
+          = image_tag "default_author.png"
       .note-creater__content__detail
         .note-creater__content__detail__name
           = @user.nickname

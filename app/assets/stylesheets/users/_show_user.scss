@@ -11,10 +11,12 @@
       border-bottom: 1px solid $border_gray;
       &__avatar {
         float: left;
-        height: 110px;
-        width: 110px;
         margin-right: 20px;
-        background-color: red;
+        img {
+          border-radius: 50%;
+          height: 110px;
+          width: 110px;
+        }
       }
       &__detail {
         float: right;

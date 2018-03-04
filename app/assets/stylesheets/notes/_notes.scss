@@ -57,7 +57,7 @@
       }
     }
     &__text {
-      padding: 0 20px 20px 20px;
+      padding-bottom: 20px;
       background-color: white;
       font-size: 14px;
       text-align: justify;
@@ -67,6 +67,7 @@
       .title {
         font-size: 20px;
         font-weight: bold;
+        padding: 0 20px;
         margin: 20px 0 13px 0;
         color: black;
         a {
@@ -79,6 +80,7 @@
         max-height: 250px;
         overflow: hidden;
         text-overflow: ellipsis;
+        padding: 0 20px;
       }
     }
     &__info {
