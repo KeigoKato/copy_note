@@ -8,16 +8,12 @@
         .account-menu
           %ul
             %li
-              .account-menu__btn
-                %button
-                  %p
-                    公開設定
-                    = f.submit "Send", class: "send-btn"
+              %p.configure-post
+                公開設定
             %li
-              .account-menu__btn
-                %button
-                  %p
-                    キャンセル
+              = link_to root_path do
+                %p.configure-cancel
+                  キャンセル
     .post-new
       .editor
         .editor__title-image
@@ -28,44 +24,41 @@
           = f.text_field :title, class: "edit-title", placeholder: "ノートタイトル"
         .editor__body
           = f.text_area :body, class: "edit-body", placeholder: "ノート本文"
-
-    .configure-purchase
-      .configure-purchase__header
-        公開設定
-      .configure-purchase__body
-        .configure-purchase__body__top
-          %ul
-            %li
-              %p
-                販売設定
-            %li
-              .checkbox
-                = radio_button_tag :check, "1"
-                無料
-            %li
-              .checkbox
-                = radio_button_tag :check, "2"
-                有料
-            %li
-              .configure-value
-                = f.text_field :value, class: "edit-value", placeholder: "値段を入力"
-            %li
-              円
-        .configure-purchase__body__middle
-          .configure-purchase__body__middle__inner
-            %ul
-              %li
-                %i.fa.fa-caret-right
-              %li
-                %p.detail-configure
-                  詳細設定
+    .configure-purchase-overlay
+      .configure-purchase
+        .configure-purchase__header
+          公開設定
+        .configure-purchase__body
+          .configure-purchase__body__top
+            %ul.purchase-type-list
               %li
                 %p
-                  (ハッシュタグ、マガジン)
-      .configure-purchase__body__bottom
-        .post-cancel-btn
-          %button
-            キャンセル
-        .post-btn
-          %button
-            公開
+                  販売設定
+              %li
+                .checkbox
+                  = radio_button_tag :check, "1"
+                  無料
+              %li
+                .checkbox
+                  = radio_button_tag :check, "2"
+                  有料
+          .configure-purchase__body__middle
+            .configure-purchase__body__middle__inner
+              %ul
+                %li
+                  %i.fa.fa-caret-right
+                %li
+                  %p.detail-configure
+                    詳細設定
+                %li
+                  %p
+                    (ハッシュタグ、マガジン)
+          .configure-purchase__body__notice
+            %p
+              販売価格は100円〜10,000円まで設定できます。
+        .configure-purchase__body__bottom
+          .post-btn
+            .post-btn__cancel
+              キャンセル
+          .post-btn
+            = f.submit "公開", class: "post-btn__post"

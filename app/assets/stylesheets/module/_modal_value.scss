@@ -1,76 +1,97 @@
-.configure-purchase {
+.configure-purchase-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
   display: none;
-  height: 219px;
-  width: 470px;
-  &__header {
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 0;
-    text-align: center;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid $border_gray;
-  }
-  &__body {
-    height: 81px;
-    margin: 15px;
-    &__top {
-      margin-bottom: 15px;
-      height: 26px;
+  .configure-purchase {
+    height: 219px;
+    width: 470px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: white;
+    &__header {
       width: 100%;
-      font-size: 12px;
+      font-size: 20px;
       font-weight: bold;
-      line-height: 26px;
-      ul {
-       li {
-        display: inline-block;
-       }
-       li p {
-        padding-left: 24px;
-        margin-right: 20px;
-       }
-       .checkbox {
-        margin-right: 10px;
-        font-weight: normal;
-       }
-       .edit-value {
-        width: 74px;
-        font-weight: normal;
-       }
-      }
-    }
-    &__middle {
-      height: 38px;
-      width: 100%;
+      padding: 15px 0;
+      text-align: center;
       background-color: #f8f9fa;
-      border-radius: 4px;
-      border: 1px solid $border_gray;
-      &__inner {
-        padding: 10px;
+      border-bottom: 1px solid $border_gray;
+    }
+    &__body {
+      margin: 15px;
+      &__top {
+        margin-bottom: 15px;
+        height: 26px;
+        width: 100%;
         font-size: 12px;
+        font-weight: bold;
+        line-height: 26px;
         ul {
-          li {
-            display: inline-block;
-          }
-          li i {
-            font-size: 15px;
-            margin-left: 8px;
-          }
-          .detail-configure {
-            font-weight: bold;
+         li {
+          display: inline-block;
+         }
+         li p {
+          padding-left: 24px;
+          margin-right: 20px;
+         }
+         .checkbox {
+          margin-right: 10px;
+          font-weight: normal;
+         }
+         .edit-value {
+          width: 74px;
+          font-weight: normal;
+         }
+        }
+      }
+      &__middle {
+        height: 38px;
+        width: 100%;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border: 1px solid $border_gray;
+        &__inner {
+          padding: 10px;
+          font-size: 12px;
+          ul {
+            li {
+              display: inline-block;
+            }
+            li i {
+              font-size: 15px;
+              margin-left: 8px;
+            }
+            .detail-configure {
+              font-weight: bold;
+            }
           }
         }
       }
-    }
-    &__bottom {
-      padding: 10px;
-      background-color: #f8f9fa;
-      height: 30px;
-      margin-top: 15px;
-      .post-cancel-btn {
-        button {
+      &__notice {
+        margin-top: 10px;
+        color: red;
+        font-size: 11px;
+        display: none;
+      }
+      &__bottom {
+        padding: 10px;
+        background-color: #f8f9fa;
+        height: 30px;
+        margin-top: 15px;
+        .post-btn__cancel {
           float: left;
           font-weight: normal;
+          font-size: 12px;
+          text-align: center;
+          line-height: 30px;
           height: 30px;
           width: 98px;
           cursor: pointer;
@@ -78,11 +99,12 @@
           background: transparent;
           border: none;
         }
-      }
-      .post-btn {
-        button {
+        .post-btn__post {
           float: right;
           font-weight: normal;
+          font-size: 12px;
+          text-align: center;
+          line-height: 30px;
           height: 30px;
           width: 98px;
           border-radius: 4px;
@@ -91,7 +113,12 @@
           background-color: #2cb696;
           color: white;
         }
+        a {
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
 }
+
