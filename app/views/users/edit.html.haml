@@ -1,0 +1,33 @@
+= form_for @user do |f|
+  .wrapper-user-edit
+    .header-image
+      .header-image__add
+        %i.fa.fa-camera
+        %p
+          ヘッダー画像を追加
+    .user-renewal-area
+      .user-renewal-area__inner
+        %ul
+          %li
+            .user-renewal-area__thumnail
+              .note-creater__content__avatar
+                - if @user.thumbnail.present?
+                  = image_tag @user.thumbnail, class: "note-creater__content__avatar"
+                - else
+                  = image_tag "default_author.png", class: "note-creater__content__avatar"
+          %li
+            .user-renewal-area__textarea
+              .user-renewal-area__name
+                = f.text_field :nickname, class: "user-renewal-area__name__text", placeholder: "ニックネーム"
+              .user-renewal-area__profile
+                = f.text_area :profile, class: "user-renewal-area__profile__text", placeholder: "あなたの自己紹介を書きましょう（140文字以内）"
+
+    .user-renewal-editBtn
+      %ul
+        %li.user-renewal-editBtn__cancel
+          = link_to user_path(current_user) do
+            %p
+              キャンセル
+        %li.user-renewal-editBtn__save
+          %p
+            = f.submit "保存", class: "user-renewal-editBtn__save"

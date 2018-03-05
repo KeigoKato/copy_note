@@ -1,0 +1,85 @@
+.wrapper-user-edit {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  .header-image {
+    height: 110px;
+    color: white;
+    background-color: gray;
+    &__add {
+      width: 200px;
+      margin: 0 auto;
+      .fa-camera {
+        display: block;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 40px;
+      }
+      p {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+  .user-renewal-area {
+    background-color: white;
+    &__inner {
+      width: 956px;
+      margin: 20px auto 10px auto;
+      ul li {
+        display: inline-block;
+        vertical-align: middle;
+        .note-creater__content__avatar {
+          border-radius: 50%;
+          height: 110px;
+          width: 110px;
+          margin-right: 20px;
+        }
+        .user-renewal-area__textarea {
+          font-size: 22px;
+          .user-renewal-area__name__text {
+            width: 788px;
+            border-radius: 4px;
+            border: 1px solid $border_gray;
+            padding: 5px 15px;
+            margin-bottom: 10px;
+          }
+          .user-renewal-area__profile__text {
+            font-size: 13px;
+            width: 788px;
+            height: 72px;
+            border-radius: 4px;
+            border: 1px solid $border_gray;
+            padding: 8px 15px;
+          }
+        }
+      }
+    }
+  }
+  .user-renewal-editBtn {
+    width: 956px;
+    margin: 0 auto;
+    text-align: right;
+    li {
+      display: inline-block;
+    }
+    li a {
+      text-decoration: none;
+    }
+    ul li p {
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #2cb696;
+      color: #2cb696;
+      padding: 11.2px 22.4px;
+    }
+    .user-renewal-editBtn__save {
+      margin-left: 10px;
+    }
+    .user-renewal-editBtn__save p {
+      background-color: #2cb696;
+      color: white;
+    }
+  }
+}
