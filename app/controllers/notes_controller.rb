@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @notes = Note.order("created_at DESC")
+    @notes = Note.order("created_at DESC").include(:user)
   end
 
   def new
@@ -16,7 +16,7 @@ class NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find(params[:id])
+    @note = Note.find(params[:id]).include(:user)
   end
 
   private
