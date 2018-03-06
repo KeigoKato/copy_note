@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     if current_user.id == user.id
       user.update(edit_user)
       redirect_to user_path(current_user)
-      binding.pry
     end
   end
 

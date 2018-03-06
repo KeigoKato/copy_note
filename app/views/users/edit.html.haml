@@ -20,7 +20,10 @@
               .user-renewal-area__name
                 = f.text_field :nickname, class: "user-renewal-area__name__text", placeholder: "ニックネーム"
               .user-renewal-area__profile
-                = f.text_area :profile, class: "user-renewal-area__profile__text", placeholder: "あなたの自己紹介を書きましょう（140文字以内）"
+                = f.text_area :profile,
+                  class: "user-renewal-area__profile__text",
+                  maxlength: "140",
+                  placeholder: "あなたの自己紹介を書きましょう（140文字以内）"
 
     .user-renewal-editBtn
       %ul
@@ -30,4 +33,4 @@
               キャンセル
         %li.user-renewal-editBtn__save
           %p
-            = f.submit "保存", class: "user-renewal-editBtn__save"
+            = f.submit "保存", class: "user-renewal-editBtn__saveBtn"
