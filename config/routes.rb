@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "notes#index"
 
-  resources :notes, only: [:index, :new, :create, :show, :destroy]
+  resources :notes, only: [:index, :new, :create, :show, :destroy, :edit, :update]
 
   resources :notes do
     resources :deals, only: :create

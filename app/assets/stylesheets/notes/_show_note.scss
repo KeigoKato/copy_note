@@ -38,6 +38,20 @@
             font-size: 11px;
           }
         }
+        li.edit-note {
+          float: right;
+          a {
+            text-decoration: none;
+          }
+          p {
+            // line-height: 42px;
+            padding: 8.4px 12px;
+            font-size: 12px;
+            border: 1px solid #41B79B;
+            border-radius: 4px;
+            color: #41B79B;
+          }
+        }
       }
     }
     &__text {

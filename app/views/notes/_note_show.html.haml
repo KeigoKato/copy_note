@@ -19,6 +19,10 @@
         %p.author-detail__date
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
+      %li.edit-note
+        = link_to edit_note_path(note) do
+          %p
+            編集
   .articles__text
     .body
       - if note.body.present?

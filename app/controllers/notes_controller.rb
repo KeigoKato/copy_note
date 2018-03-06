@@ -27,6 +27,19 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    @post= Note.find(params[:id])
+  end
+
+  def update
+    new_post = Note.find(params[:id])
+    if new_post.user_id == current_user.id
+      new_post.update(note_params)
+      redirect_to "/notes/#{params[:id]}", method: :show
+    end
+  end
+
+
   private
   def note_params
     params.require(:note).permit(:title, :body, :title_image, :value).merge(user_id: current_user.id)
