@@ -108,6 +108,14 @@
           display: inline-block;
           margin-right: 35px;
         }
+        li.articles__info__delete {
+          display: inline-block;
+          margin-right: 35px;
+          i {
+            color: black;
+            text-decoration: none;
+          }
+        }
       }
       p.add-comment {
         font-size: 17px;

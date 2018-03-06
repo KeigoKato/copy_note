@@ -46,6 +46,13 @@
         %i.fa.fa-share
       %li.articles__info__add-magazine
         %i.fa.fa-plus
+      %li.articles__info__delete
+        - if note.user_id == current_user.id
+          = link_to "/notes/#{note.id}", method: :delete do
+            .articles__info__delete__btn
+              %i.fa.fa-ellipsis-h
+        - else
+          %i.fa.fa-ellipsis-h
     %p.add-comment
       コメントする
 

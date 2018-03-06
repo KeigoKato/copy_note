@@ -3,8 +3,9 @@
     .header-image
       .header-image__add
         %i.fa.fa-camera
-        %p
-          ヘッダー画像を追加
+        .header-image__add__thumbnail
+          %p
+            ヘッダー画像を追加
     .user-renewal-area
       .user-renewal-area__inner
         %ul
@@ -32,5 +33,4 @@
             %p
               キャンセル
         %li.user-renewal-editBtn__save
-          %p
-            = f.submit "保存", class: "user-renewal-editBtn__saveBtn"
+          = f.submit "保存", class: "user-renewal-editBtn__saveBtn"
