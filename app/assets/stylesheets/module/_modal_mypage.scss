@@ -1,0 +1,39 @@
+.modal-container-mypage__overlay {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50px;
+  left: 1110px;
+  .modal-container-mypage__modal-window {
+    display: none;
+    width: 200px;
+    padding: 8px 0;
+    border: 1px solid $border_gray;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 12px;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: black;
+    }
+    .mypage__menu__account {
+      padding: 6px 25px;
+      border-bottom: 1px solid $border_gray;
+      .mypage__menu__list__user {
+        font-weight: bold;
+      }
+      .mypage__menu__list__user__notice {
+        font-size: 11px;
+        color: #787C7B;
+        font-weight: normal;
+      }
+    }
+    .mypage__menu__list__configure p {
+      padding: 6px 25px;
+    }
+    .mypage__menu__list__logout p {
+      padding: 6px 25px;
+    }
+  }
+}

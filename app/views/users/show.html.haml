@@ -13,9 +13,11 @@
         %ul
           %li.note-creater__content__detail__name
             = @user.nickname
-          = link_to edit_user_path(current_user) do
-            %li.note-creater__content__detail__configure-btn
-              設定
+          - if @user.id == current_user.id
+            = link_to edit_user_path(current_user) do
+              %li.note-creater__content__detail__configure-btn
+                設定
+
         .note-creater__content__detail__profile
           = @user.profile
         .note-creater__content__detail__otherList

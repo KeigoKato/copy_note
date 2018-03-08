@@ -11,7 +11,10 @@
   .articles__author
     %ul
       %li.author-image
-        = image_tag "default_author.png"
+        - if note.user.thumbnail.present?
+          = image_tag note.user.thumbnail
+        - else
+          = image_tag "default_author.png"
       %li.author-detail
         %p.author-detail__name
           - if note.user.nickname.present?
@@ -20,13 +23,14 @@
           - if note.created_at.present?
             = note.created_at.in_time_zone('Tokyo').to_s
       %li.edit-note
-        = link_to edit_note_path(note) do
-          %p
-            編集
+        - if note.user.id == current_user.id
+          = link_to edit_note_path(note) do
+            %p
+              編集
   .articles__text
     .body
       - if note.body.present?
-        = simple_format(note.body)
+        = simple_format(h(note.body))
   .articles__info
     %ul
       %li.articles__info__likes

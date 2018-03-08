@@ -4,20 +4,17 @@
       = link_to root_path do
         = image_tag "title-logo.png"
     %ul.header__top__info
-      -if user_signed_in?
+      - if user_signed_in?
         %li
-          .logout
-            -# = link_to destroy_user_session_path do
-            = link_to destroy_user_session_path, method: :delete do
-              ログアウト
           .search
             %i.fa.fa-search.fa-fw
           .announce
             %i.fa.fa-bell-o.fa-fw
-          = link_to user_path(current_user), class: "current_user_page" do
-            .mypage
-              -# = image_tag "default_author.png"
-              = image_tag current_user.thumbnail
+          .mypage
+            - if current_user.thumbnail.present?
+              = image_tag current_user.thumbnail, id: "user_img"
+            - else
+              = image_tag "default_author.png", id: "user_img"
           = link_to new_note_path do
             .contribution
               %i.fa.fa-pencil-square-o

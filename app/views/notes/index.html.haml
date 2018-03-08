@@ -7,4 +7,7 @@
       %p
         もっとみる
   = render "shared/footer"
-=render "shared/modal_purchase"
+= render "shared/modal_purchase"
+- if user_signed_in?
+  = render "shared/modal_mypage"
+= render "shared/modal_delete_note"

@@ -1,5 +1,30 @@
 .header {
   background-color: white;
+  .mypage__menu {
+    display: none;
+    position: absolute;
+    left: 1150px;
+    top: 50px;
+    width: 181px;
+    border: 1px solid $border_gray;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 12px;
+    padding: 6px 0;
+    a {
+      text-decoration: none;
+    }
+    p {
+      padding: 6px 25px;
+      color: black;
+    }
+    .mypage__menu__list__user__notice {
+      border-bottom: 1px solid $border_gray;
+      font-size: 11px;
+      color: #787C7B;
+      padding: 0 25px 6px 25px;
+    }
+  }
   &__top {
     height: 30px;
     width: 940px;
@@ -23,6 +48,9 @@
         border-radius: 50%;
         width: 30px;
         height: 30px;
+      }
+      .mypage {
+        cursor: pointer;
       }
       .contribution {
         padding: 8px 10px;

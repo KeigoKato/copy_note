@@ -7,7 +7,7 @@ $(function() {
 
   $(document).on("click", ".author-purchase-btn", function(e) {
     var authorId = $(e.target).parent().parent().prev().find("a").attr("href").replace(/\/users\//, "")
-    var userId = $(".current_user_page").attr("href").replace(/\/users\//, "");
+    var userId = $(".mypage__menu__list__configure").attr("href").replace(/\/users\//, "").replace(/\/edit/, "")
     var noteId = $(this).attr("value");
     var noteURL = "[href='/notes/" + noteId + "']"
     var title = $(noteURL).text();

@@ -1,0 +1,21 @@
+.modal-container-mypage__overlay
+  .modal-container-mypage__modal-window
+    .mypage__menu
+      .mypage__menu__account
+        - if user_signed_in?
+          = link_to user_path(current_user), class: "mypage__menu__list__user" do
+            %p
+              #{current_user.nickname}
+            %p.mypage__menu__list__user__notice
+              マイページを表示
+        - else
+          = link_to new_user_session_path do
+            .mypage__menu__list__user__notice
+              ログイン
+      - if user_signed_in?
+        = link_to edit_user_path(current_user), class: "mypage__menu__list__configure" do
+          %p
+            アカウント設定
+      = link_to destroy_user_session_path, class: "mypage__menu__list__logout", method: :delete do
+        %p
+          ログアウト

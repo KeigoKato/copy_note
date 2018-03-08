@@ -14,8 +14,12 @@
             %i.fa.fa-search.fa-fw
           .announce
             %i.fa.fa-bell-o.fa-fw
-          .mypage
-            = image_tag "default_author.png"
+          = link_to user_path(current_user) do
+            .mypage
+              - if note.user.thumbnail.present?
+                = image_tag note.user.thumbnail
+              - else
+                = image_tag "default_author.png"
           = link_to new_note_path do
             .contribution
               %i.fa.fa-pencil-square-o
