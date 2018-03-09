@@ -1,21 +1,18 @@
 .modal-container-mypage__overlay
-  .modal-container-mypage__modal-window
-    .mypage__menu
-      .mypage__menu__account
-        - if user_signed_in?
-          = link_to user_path(current_user), class: "mypage__menu__list__user" do
-            %p
-              #{current_user.nickname}
-            %p.mypage__menu__list__user__notice
-              マイページを表示
-        - else
-          = link_to new_user_session_path do
-            .mypage__menu__list__user__notice
-              ログイン
+  .modal-container-mypage__window
+    .modal-container-mypage__overlay__user-name
       - if user_signed_in?
-        = link_to edit_user_path(current_user), class: "mypage__menu__list__configure" do
+        = link_to user_path(current_user) do
           %p
-            アカウント設定
-      = link_to destroy_user_session_path, class: "mypage__menu__list__logout", method: :delete do
-        %p
+            #{current_user.nickname}
+        %p.display-mypage
+          マイページを表示
+    .modal-container-mypage__overlay__configure
+      %p
+        = link_to edit_user_path(current_user) do
+          アカウント設定
+    .modal-container-mypage__overlay__logout
+      %p
+        = link_to destroy_user_session_path, method: :delete do
           ログアウト
+
