@@ -17,7 +17,7 @@
       %li.author-purchase
         - if note.value!=0
           %button.author-purchase-btn{value: "#{note.id}"}
-            %p.author-purchase__value
+            %p.author-purchase__value{value: "#{note.id}", name: "#{note.user.nickname}"}
               - if user_signed_in?
                 = current_user.deals_of_subscriber.where(note_id: note.id)==[] ? "¥ #{note.value}" : "購入済み"
               - else
@@ -28,7 +28,7 @@
         - if note.title_image.present?
           = image_tag note.title_image
     .title
-      = link_to note_path(note) do
+      = link_to note_path(note), class: "title_mypage_link" do
         - if note.title.present?
           = note.title
     .body
@@ -50,10 +50,10 @@
           - if note.user_id == current_user.id
             .articles__info__delete__btn
               %i.fa.fa-ellipsis-h
+              .modal-delete
+                .modal-delete__delete-btn
+                  = link_to "/notes/#{note.id}", method: :delete do
+                    %p#delete-note
+                      削除
     %p.add-comment
       コメントする
-.modal-delete
-  .modal-delete__delete-btn
-    = link_to "/notes/#{note.id}", method: :delete do
-      %p#delete-note
-        削除

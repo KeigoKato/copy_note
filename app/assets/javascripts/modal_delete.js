@@ -2,7 +2,7 @@ $(function (){
   $(document).on("click", function(e){
     var clickClass = $(e.target).attr("class")
     if (clickClass == "fa fa-ellipsis-h") {
-      var target = $(e.target).parents(".articles").next();
+      var target = $(e.target).next();
       if (!target.attr("style") || target.attr("style").match(/none/)) {
         target.show();
       }

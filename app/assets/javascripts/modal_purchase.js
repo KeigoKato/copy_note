@@ -1,44 +1,51 @@
 $(function() {
 
-  function replaceHTML (title, price) {
+  function replaceHTML(title, price) {
     $(".purchase-detail__title").text(title);
     $(".purchase-detail__price").text(price);
   }
 
-  $(document).on("click", ".author-purchase-btn", function(e) {
-    var authorId = $(e.target).parent().parent().prev().find("a").attr("href").replace(/\/users\//, "")
-    var userId = $(".mypage__menu__list__configure").attr("href").replace(/\/users\//, "").replace(/\/edit/, "")
-    var noteId = $(this).attr("value");
-    var noteURL = "[href='/notes/" + noteId + "']"
-    var title = $(noteURL).text();
-    var price = $(this).find("p").text().replace(/../, "").replace(/$/, "円")
-    var postHref = "notes/" + noteId + "/deals";
-    if (authorId !== userId) {
-      if (price.match(/[0-9]+/)){
-        replaceHTML(title, price);
-        $(".modal-container__purchase-btn").attr({"href":postHref, "data-method":"post"});
-        $(".modal-container__overlay, .modal-container__modal-window").fadeIn();
+  $(document).on("click", function(e){
+    if ($(e.target).attr("class") == "author-purchase__value") {
+
+      if (!$(e.target).text().match(/購入済み/)) {
+
+        if($("#user_name").text().replace(/\n/g, "") != $(e.target).attr("name")) {
+
+          var clickNote = $(e.target).attr("value")
+          var clickTitle = $(e.target).parents(".articles").find(".title_mypage_link").text();
+          var clickValue = $(e.target).text().replace(/¥ /, "").replace(/$/, " 円");
+
+          var replaceUrl = "/notes/" + clickNote + "/deals"
+          var purchaseBtn = $("body").find(".modal-container__purchase-btn");
+          purchaseBtn.attr("href", replaceUrl)
+          purchaseBtn.attr("data-method", "post")
+
+          replaceHTML(clickTitle, clickValue);
+
+          $(".modal-container__overlay").fadeIn();
+
+        } else {
+          alert("あなたが投稿したノートを購入することができません");
+        }
+
       } else {
-        alert("購入済みです");
+        alert("すでに購入済みです");
       }
-    } else {
-      alert("これはあなたが投稿したノートです。購入することはできません。")
+
+    } else if(!$(e.target).closest('.modal-container__modal-window').length) {
+      $(".modal-container__overlay").fadeOut();
     }
   });
 
-  $(document).on("click", ".modal-container__close-btn", function() {
-    if (!confirm("本当に購入を中止しますか？")){
-      return false;
-    } else {
-      $(".modal-container__overlay, .modal-container__modal-window").fadeOut();
-    }
-  });
-
-  $(document).on("click", ".modal-container__overlay", function(e){
-      var clickedElement = $(e.target);
-      if($(clickedElement).hasClass("modal-container__overlay")){
-          $(".modal-container__overlay").fadeOut();
+  $(document).on("click", function(e){
+    if($(e.target).attr("class") == "modal-container__close-btn"){
+      if(!confirm("購入を中止しますか？")){
+        return false;
+      } else {
+        $(".modal-container__overlay").fadeOut();
       }
+    }
   });
 
 });

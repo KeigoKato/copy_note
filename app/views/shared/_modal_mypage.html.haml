@@ -3,7 +3,7 @@
     .modal-container-mypage__overlay__user-name
       - if user_signed_in?
         = link_to user_path(current_user) do
-          %p
+          %p#user_name
             #{current_user.nickname}
         %p.display-mypage
           マイページを表示
