@@ -1,8 +1,9 @@
 $(function() {
 
-  function replaceHTML(title, price) {
+  function replaceHTML(title, price, image) {
     $(".purchase-detail__title").text(title);
     $(".purchase-detail__price").text(price);
+    $(".purchase-image").find("img").attr("src", image)
   }
 
   $(document).on("click", function(e){
@@ -15,13 +16,14 @@ $(function() {
           var clickNote = $(e.target).attr("value")
           var clickTitle = $(e.target).parents(".articles").find(".title_mypage_link").text();
           var clickValue = $(e.target).text().replace(/¥ /, "").replace(/$/, " 円");
+          var clickImage = $(e.target).parents(".articles__author").next(".articles__text").find("img").attr("src");
 
           var replaceUrl = "/notes/" + clickNote + "/deals"
           var purchaseBtn = $("body").find(".modal-container__purchase-btn");
           purchaseBtn.attr("href", replaceUrl)
           purchaseBtn.attr("data-method", "post")
 
-          replaceHTML(clickTitle, clickValue);
+          replaceHTML(clickTitle, clickValue, clickImage);
 
           $(".modal-container__overlay").fadeIn();
 
