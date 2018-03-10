@@ -11,11 +11,13 @@
         %ul
           %li
             .user-renewal-area__thumnail
-              .note-creater__content__avatar
-                - if @user.thumbnail.present?
-                  = image_tag @user.thumbnail, class: "note-creater__content__avatar"
-                - else
-                  = image_tag "default_author.png", class: "note-creater__content__avatar"
+              = f.label :thumbnail do
+                .note-creater__content__avatar
+                  = f.file_field :thumbnail
+                  - if @user.thumbnail.present?
+                    = image_tag @user.thumbnail, class: "note-creater__content__avatar"
+                  - else
+                    = image_tag "default_author.png", class: "note-creater__content__avatar"
           %li
             .user-renewal-area__textarea
               .user-renewal-area__name

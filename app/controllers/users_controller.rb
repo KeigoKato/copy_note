@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   private
   def edit_user
-    params.require(:user).permit(:nickname, :profile)
+    params.require(:user).permit(:nickname, :profile, :thumbnail)
   end
 
 end
