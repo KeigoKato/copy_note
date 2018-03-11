@@ -6,7 +6,6 @@ $(function(){
     var file = e.target.files[0];
     var reader = new FileReader();
     var $preview = $(e.target);
-    var t = this;
     if(file.type.indexOf("image") < 0){
       return false;
     }

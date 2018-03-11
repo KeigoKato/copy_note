@@ -1,0 +1,53 @@
+.comments {
+  width: 620px;
+  background-color: #F2F4F4;
+  margin: 0 auto;
+  font-size: 11px;
+  &__inner {
+    padding: 15px 25px;
+    height: 345px;
+    &__header {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+    &__posted-comments{
+      &__body {
+        padding-bottom: 10px;
+        // height: 66px;
+        background-color: yellow;
+        .user-comment {
+          &__thumbnail {
+            display: inline-block;
+            background-color: red;
+            vertical-align: top;
+            &__image {
+              width: 30px;
+              height: 30px;
+              background-color: green;
+              border-radius: 50%;
+            }
+          }
+          &__info {
+            display: inline-block;
+            background-color: skyblue;
+            width: 530px;
+            &__user-name {
+              height: 30px;
+              font-weight: bold;
+              display: inline-block;
+              margin-right: 5px;
+            }
+            &__update {
+              display: inline-block;
+              color: gray;
+            }
+            &__comment {
+              margin-top: 1px;
+              background-color: purple;
+            }
+          }
+        }
+      }
+    }
+  }
+}
