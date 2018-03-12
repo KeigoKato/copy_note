@@ -17,6 +17,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    @review = Review.new
   end
 
   def destroy
