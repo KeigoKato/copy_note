@@ -14,12 +14,13 @@
       &__body {
         padding-bottom: 10px;
         // height: 66px;
-        background-color: yellow;
+        background-color: #F2F4F4;
         .user-comment {
           &__thumbnail {
             display: inline-block;
-            background-color: red;
+            background-color: #F2F4F4;
             vertical-align: top;
+            margin-right: 6px;
             &__image {
               width: 30px;
               height: 30px;
@@ -29,13 +30,22 @@
           }
           &__info {
             display: inline-block;
-            background-color: skyblue;
+            background-color: #F2F4F4;
             width: 530px;
             &__user-name {
               // height: 30px;
               font-weight: bold;
               display: inline-block;
               margin-right: 5px;
+              #review-body {
+                width: 508px;
+                padding: 6px 10px;
+                border: 1px solid #e1e5e7;
+                border-radius: 4px;
+              }
+              #review-submit {
+                display: none;
+              }
             }
             &__update {
               display: inline-block;
@@ -43,7 +53,7 @@
             }
             &__comment {
               margin-top: 1px;
-              background-color: purple;
+              background-color: #F2F4F4;
             }
           }
         }
