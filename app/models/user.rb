@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :notes
   has_many :deals, dependent: :destroy
+  has_many :reviews
 
   # 売買の取引に関するリレーション定義
   has_many :deals_of_author, class_name: "Deal", foreign_key: "author_id"

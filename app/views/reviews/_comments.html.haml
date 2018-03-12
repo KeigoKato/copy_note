@@ -3,6 +3,9 @@
     .comments__inner__header
       %p
         コメント5件
+    - reviews.each do |review|
+      = render "reviews/each_comment", review: review
+
     .comments__inner__posted-comments
       .comments__inner__posted-comments__body
         %ul.user-comment
@@ -18,6 +21,7 @@
               %li
                 .user-comment__info__comment
                   よく子どもは大人より賢いと言いますものね。(*´∀｀*)
+
     .comments__inner__posted-comments
       .comments__inner__posted-comments__body
         %ul.user-comment

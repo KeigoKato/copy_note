@@ -17,6 +17,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
+    @reviews = @note.reviews.order("created_at DESC")
     @review = Review.new
   end
 
