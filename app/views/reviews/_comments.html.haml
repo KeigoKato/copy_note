@@ -15,7 +15,8 @@
           %li.user-comment__info
             %ul
               %li
-                = form_for [@note, @review], url: note_reviews_path(note), remote: true do |f|
+                -# = form_for [@note, @review], url: note_reviews_path(note), remote: true do |f|
+                = form_for [@note, @review] do |f|
                   .user-comment__info__user-name
                     = f.text_field :review, id: "review-body", placeholder: "コメントする"
                     = f.submit id: "review-submit"
