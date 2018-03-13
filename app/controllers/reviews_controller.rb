@@ -1,6 +1,12 @@
 class ReviewsController < ApplicationController
   def create
-    review = Review.create(create_review)
+    review = Review.new(create_review)
+    if review.save
+      respond_to do |format|
+        # format.html
+        format.json
+      end
+    end
   end
 
   private
