@@ -4,8 +4,7 @@ class ReviewsController < ApplicationController
     @review = @note.reviews.new(create_review)
     if @review.save
       respond_to do |format|
-        # format.html{redirect_to note_path(@note)}
-        format.html{root_path}
+        format.html{redirect_to note_path(@note)}
         format.json
       end
     end
