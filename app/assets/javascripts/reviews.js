@@ -46,7 +46,9 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      var commentCount = $(".comments__inner__posted-comments__body").length
       var appendHTML = buildHTML(data);
+      $(".comments__inner__header p").text("コメント" + commentCount + "件")
       $(".comments__inner__header").after(appendHTML);
     })
     .fail(function(){
