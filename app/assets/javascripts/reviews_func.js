@@ -1,4 +1,5 @@
 $(function(){
+
   function buildHTML(data){
     var html = `
     <div class="comments__inner__posted-comments">
@@ -35,13 +36,16 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
+    console.log("this");
+    debugger;
+
     $.ajax({
       url: url,
       type: "POST",
       data: formData,
       dataType: "json",
       processData: false,
-      contentData: false
+      contentType: false
     })
     .done(function(data){
       debugger;

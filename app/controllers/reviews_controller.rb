@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
   def create
-    review = Review.new(create_review)
-    if review.save
+    @note = Note.find(params[:note_id])
+    @review = @note.reviews.new(create_review)
+    if @review.save
       respond_to do |format|
-        # format.html
+        # format.html{redirect_to note_path(@note)}
+        format.html{root_path}
         format.json
       end
     end
