@@ -1,5 +1,5 @@
 .wrapper-show
-  = render "shared/header_show_top" ,note: @note
+  = render "shared/header" ,note: @note
   .show-note
     = render "notes/note_show", note: @note
   = render "reviews/comments", {note: @note, reviews: @reviews}
