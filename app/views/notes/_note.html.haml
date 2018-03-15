@@ -56,4 +56,5 @@
                     %p#delete-note
                       削除
     %p.add-comment
-      コメントする
+      = link_to note_path(note) do
+        コメントする
