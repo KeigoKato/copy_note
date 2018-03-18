@@ -1,5 +1,21 @@
-%li.articles__info__likes
-  %i.fa.fa-heart-o
-%li.articles__info__likes-count
-  %p
-    10
+- if user_signed_in?
+  - if note.like_user(current_user.id)
+    = link_to note_like_path(like, note_id: note.id), method: :delete, id: "like-button", remote: true do
+      %li.articles__info__likes
+        %i.fa.fa-heart-o
+      %li.articles__info__likes-count
+        %p
+          = note.like_count
+  - else
+    = link_to note_likes_path(note), id: "like-button", remote: true do
+      %li.articles__info__likes
+        %i.fa.fa-heart
+      %li.articles__info__likes-count
+        %p
+          = note.like_count
+- else
+  %li.articles__info__likes
+    %i.fa.fa-heart
+  %li.articles__info__likes-count
+    %p
+      = note.like_count
