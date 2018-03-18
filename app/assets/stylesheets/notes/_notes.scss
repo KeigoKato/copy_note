@@ -92,8 +92,17 @@
       color: gray;
       ul {
         float: left;
-        li.articles__info__likes {
-          display: inline-block;
+        a{
+          text-decoration: none;
+          .fa-heart {
+            color: red;
+          }
+          .fa-heart-o {
+            color: gray;
+          }
+          li.articles__info__likes {
+            display: inline-block;
+          }
         }
         li.articles__info__likes-count {
           display: inline-block;
