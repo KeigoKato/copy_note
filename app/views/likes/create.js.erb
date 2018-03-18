@@ -1,0 +1,4 @@
+$("#like-button").html("<%= j(
+  render partial: 'like',
+  locals: { note: @notes, likes: @likes, like: @like})
+  %>")
