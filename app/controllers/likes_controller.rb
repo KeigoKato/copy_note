@@ -1,14 +1,21 @@
 class LikesController < ApplicationController
+  before_action :set_note, only: [:create, :destroy]
+
   def create
-    @like = Like.create(user_id: current_user.id, note_id: params[:note_id])
-    @likes = Like.where(note_id: params[:note_id])
-    @notes = Note.order("created_at DESC").includes(:user)
+    @like = current_user.likes.create(note_id: params[:note_id])
+    @notes = note.all
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, note_id: params[:note_id])
+    like = current_user.likes.find_by(note_id: params[:note_id])
     like.destroy
-    @likes = Like.where(note_id: params[:note_id])
-    @notes = Note.order("created_at DESC").includes(:user)
+    @notes = note.all
   end
+
+  private
+
+  def set_note
+    @note = note.find(params[:note_id])
+  end
+
 end
