@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :notes do
     resources :deals, only: :create
     resources :reviews, only: :create
+    resources :likes, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :edit, :update]
