@@ -6,7 +6,7 @@
         %i.fa.fa-heart
       %li.articles__info__likes-count
         %p
-          10
+          = Like.where(note_id: note.id).count
         -# %p
         -#   = note.likes_count
   - else
@@ -16,7 +16,7 @@
         %i.fa.fa-heart-o
       %li.articles__info__likes-count
         %p
-          10
+          = Like.where(note_id: note.id).count
         -# %p
         -#   = note.likes_count
 - else
