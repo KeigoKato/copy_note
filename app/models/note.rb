@@ -3,6 +3,11 @@ class Note < ApplicationRecord
 
   belongs_to :user
   has_many :reviews
+  has_many :likes, dependent: :destroy
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
 
   # 売買の取引に関するリレーションの定義
   has_many :deals, dependent: :destroy
