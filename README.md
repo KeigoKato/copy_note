@@ -30,8 +30,9 @@ note.deals ... ある記事が売買された取引
 |profile|text|  
   
 ### Association  
-has_many :notes
-has_many :review
+has_many :notes  
+has_many :review  
+has_many :likes, dependent: :destroy  
 has_many :deals_of_author, class_name: "Deal", foreign_key: "author_id"  
 has_many :deals_of_subscriber, class_name: "Deal, foreign_key: "subscriber_id"  
 has_many :notes_of_author, through: :deals_of_author, source: "note"  
@@ -49,6 +50,7 @@ has_many :notes_of_subscriber, through: :deals_of_subscriber, source: "note"
 ### Association  
 belongs_to :user  
 has_many :reviews  
+has_many :likes, dependent: :destroy
 belongs_to :author, class_name: "User"  
 belongs_to :subscriber, class_name: "User"  
   
@@ -65,6 +67,17 @@ has_many :authors, through: :deals
 has_many :subscribers, through: :deals  
 
 ## reviews table  
+|Column|Type|  
+|:--|:--|  
+|review|text|  
+|user_id|integer|  
+|note_id|integer|  
+  
+### Association  
+belongs_to :user  
+belongs_to :note  
+
+## likes table  
 |Column|Type|  
 |:--|:--|  
 |review|text|  
