@@ -2,13 +2,13 @@ class LikesController < ApplicationController
   def create
     @like = Like.create(user_id: current_user.id, note_id: params[:note_id])
     @likes = Like.where(note_id: params[:note_id])
-    @notes = Note.all
+    @notes = Note.order("created_at DESC").includes(:user)
   end
 
   def destroy
     like = Like.find_by(user_id: current_user.id, note_id: params[:note_id])
     like.destroy
     @likes = Like.where(note_id: params[:note_id])
-    @notes= Note.all
+    @notes = Note.order("created_at DESC").includes(:user)
   end
 end
