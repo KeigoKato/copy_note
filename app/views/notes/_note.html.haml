@@ -36,11 +36,7 @@
         = simple_format(h(note.body.truncate(200)))
   .articles__info
     %ul
-      %li.articles__info__likes
-        %i.fa.fa-heart-o
-      %li.articles__info__likes-count
-        %p
-          10
+      = render partial: "likes/like", locals: {note: note}
       %li.articles__info__share
         %i.fa.fa-share
       %li.articles__info__add-magazine
