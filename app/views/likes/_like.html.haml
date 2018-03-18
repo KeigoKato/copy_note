@@ -1,6 +1,7 @@
 - if user_signed_in?
   - if note.like_user(current_user.id)
-    = link_to note_like_path(note, note.like_user(current_user)), method: :delete, class: "heart-icon", remote: true do
+    -# = link_to note_like_path(note, note.like_user(current_user.id)), method: :delete, class: "heart-icon", remote: true do
+    = link_to note_like_path(note, note.like_user(current_user.id)), method: :delete, class: "heart-icon", remote: true do
       %li.articles__info__likes
         %i.fa.fa-heart
       %li.articles__info__likes-count
@@ -9,6 +10,7 @@
         -# %p
         -#   = note.likes_count
   - else
+    -# = link_to note_likes_path(note), method: :post, class: "empty-heart", remote: true do
     = link_to note_likes_path(note), method: :post, class: "empty-heart", remote: true do
       %li.articles__info__likes
         %i.fa.fa-heart-o

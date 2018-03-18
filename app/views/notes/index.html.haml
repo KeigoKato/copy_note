@@ -1,13 +1,11 @@
 .wrapper-index
   = render "shared/header"
   = render "shared/header__bottom"
-  = render @notes
+  #notes-list
+    = render @notes
   .btn-more
     .btn-more__text
       %p
         もっとみる
   = render "shared/footer"
 = render "shared/modal_purchase"
--# - if user_signed_in?
--#   = render "shared/modal_mypage"
--# = render "shared/modal_delete_note"
