@@ -23,6 +23,7 @@ gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'byebug', platform: :mri
