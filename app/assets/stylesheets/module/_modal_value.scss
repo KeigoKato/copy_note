@@ -53,7 +53,7 @@
         }
       }
       &__middle {
-        height: 38px;
+        // height: 38px;
         width: 100%;
         background-color: #f8f9fa;
         border-radius: 4px;
@@ -64,6 +64,9 @@
           ul {
             li {
               display: inline-block;
+            }
+            #note-tags {
+              border: none;
             }
             li i {
               font-size: 15px;
@@ -121,4 +124,6 @@
     }
   }
 }
-
+.ui-helper-hidden-accessible {
+  display: none;
+}
