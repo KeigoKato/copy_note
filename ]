@@ -1,0 +1,10 @@
+$(function(){
+  $(document).on('turbolinks:load', function() {
+    $('.admin-articles #note-tags').tagit({
+      placeholderText:"タグをつけよう",
+      fieldName:"note[tag-list]",
+      singleField: true
+    });
+  });
+});
+

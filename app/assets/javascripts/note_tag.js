@@ -1,7 +1,6 @@
 $(function(){
   $(document).on('turbolinks:load', function() {
-    console.log("hogehoge");
-    $('#note-tags').tagit({placeholderText:"タグをつけよう",fieldName:"tags[]"});
+    $('#note-tags').tagit({ placeholderText: "タグをつけよう", fieldName: "note[tag_list]", singleField: true });
   });
 });
 

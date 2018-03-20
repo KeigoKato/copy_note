@@ -12,6 +12,7 @@ class NotesController < ApplicationController
 
   def create
     @post = Note.create(note_params)
+    binding.pry
     redirect_to root_path
   end
 
@@ -44,7 +45,7 @@ class NotesController < ApplicationController
 
   private
   def note_params
-    params.require(:note).permit(:title, :body, :title_image, :value).merge(user_id: current_user.id)
+    params.require(:note).permit(:title, :body, :title_image, :value, :tag_list).merge(user_id: current_user.id)
   end
 
 end
