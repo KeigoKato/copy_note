@@ -14,4 +14,7 @@ class Note < ApplicationRecord
   has_many :authors, through: :deals
   has_many :subscribers, through: :deals
 
+  # タグ付けができるようにする。
+  acts_as_taggable
+
 end
