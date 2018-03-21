@@ -32,6 +32,10 @@
     .body
       - if note.body.present?
         = simple_format(h(note.body))
+  .articles__tags
+    - note.tags.each do |tag|
+      %li
+        = "\##{tag.name} (#{tag.taggings_count})"
   .articles__info
     %ul
       %li.articles__info__likes
