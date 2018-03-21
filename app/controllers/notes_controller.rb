@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_note_tags_to_gon, only: :edit
+  before_action :set_note_tags_to_gon
 
   def index
     @notes = Note.order("created_at DESC").includes(:user)
@@ -50,7 +50,7 @@ class NotesController < ApplicationController
   end
 
   def set_note_tags_to_gon
-    gon.note_tags = @note.tag_list
+    gon.available_tags = Note.tags_on(:tags).pluck(:name)
   end
 
 end
