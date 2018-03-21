@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts-as-taggable-on'
 gem 'jquery-ui-rails'
+gem 'gon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
