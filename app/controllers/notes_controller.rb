@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_note_tags_to_gon, only: :edit
 
   def index
     @notes = Note.order("created_at DESC").includes(:user)
@@ -46,6 +47,10 @@ class NotesController < ApplicationController
   private
   def note_params
     params.require(:note).permit(:title, :body, :title_image, :value, :tag_list).merge(user_id: current_user.id)
+  end
+
+  def set_note_tags_to_gon
+    gon.note_tags = @note.tag_list
   end
 
 end
