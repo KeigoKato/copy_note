@@ -34,6 +34,9 @@
     .body
       - if note.body.present?
         = simple_format(h(note.body.truncate(200)))
+  .articles__tags
+    - note.tags.each do |tag|
+      = "#{tag.name} (#{tag.taggings_count})"
   .articles__info
     %ul
       = render partial: "likes/like", locals:{note: note}
