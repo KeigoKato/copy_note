@@ -37,7 +37,8 @@
   .articles__tags
     - note.tags.each do |tag|
       %li
-        = "\##{tag.name} (#{tag.taggings_count})"
+        -# = "\##{tag.name} (#{tag.taggings_count})"
+        = link_to "#{tag.name} (#{tag.taggings_count})", notes_path(tag: tag.name)
   .articles__info
     %ul
       = render partial: "likes/like", locals:{note: note}
