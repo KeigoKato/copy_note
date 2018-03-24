@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20180320130153) do
     t.integer  "value",                     default: 0
   end
 
+  create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "note_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "review",     limit: 65535
     t.integer  "user_id"
@@ -83,7 +90,7 @@ ActiveRecord::Schema.define(version: 20180320130153) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.string   "nickname",                             default: ""
+    t.string   "nickname",                                          null: false
     t.text     "profile",                limit: 65535
     t.string   "thumbnail"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

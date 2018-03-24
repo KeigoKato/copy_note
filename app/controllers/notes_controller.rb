@@ -4,8 +4,7 @@ class NotesController < ApplicationController
   before_action :set_note_tags_to_gon
 
   def index
-    # @notes = Note.order("created_at DESC").includes(:user)
-    @notes = params[:tag].present? ? Note.tagged_with(params[:tag]) : note.order("created_at DESC").includes(:user)
+    @notes = Note.order("created_at DESC").includes(:user)
   end
 
   def new
