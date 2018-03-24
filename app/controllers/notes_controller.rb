@@ -13,7 +13,6 @@ class NotesController < ApplicationController
 
   def create
     @post = Note.create(note_params)
-    binding.pry
     redirect_to root_path
   end
 
